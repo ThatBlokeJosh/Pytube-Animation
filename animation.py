@@ -1,8 +1,7 @@
 # importing the necessary packages
 import time
 import sys
-import os
-  
+
 # Function for implementing the loading animation
 def load_animation(message):
   
@@ -65,6 +64,7 @@ def load_animation(message):
         i =(i + 1)% ls_len
         counttime = counttime + 1
       
+  
 # Driver program
 if __name__ == '__main__': 
     load_animation()

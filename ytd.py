@@ -66,9 +66,12 @@ while start == "y" or "n" or "auto":
         else:
             print("Invalid input!")
             break
-                
-        link = input("Enter the url of the video: ")
-        yt = YouTube(link)
+        try:       
+            link = input("Enter the url of the video: ")
+            yt = YouTube(link)
+        except:
+            print("Invalid url!")
+            break
         print("\n")
         print("Title: ", yt.title)
         print("Author: ", yt.author)
@@ -104,8 +107,12 @@ while start == "y" or "n" or "auto":
             break
     
     while start == "auto":
-        link = input("Enter the url of the video: ")
-        yt = YouTube(link)
+        try:
+            link = input("Enter the url of the video: ")
+            yt = YouTube(link)
+        except:
+            print("Invalid url!")
+            break
         print("\n")
         print("Title: ", yt.title)
         print("Author: ", yt.author)
