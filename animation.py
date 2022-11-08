@@ -21,7 +21,7 @@ def load_animation(message):
     # pointer for travelling the loading string
     i = 0                     
   
-    while (counttime != 100):
+    while (counttime !=  350):
           
         # used to change the animation speed
         # smaller the value, faster will be the animation
