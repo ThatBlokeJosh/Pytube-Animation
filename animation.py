@@ -65,14 +65,6 @@ def load_animation(message):
         i =(i + 1)% ls_len
         counttime = counttime + 1
       
-    # for windows OS
-    if os.name =="nt":
-        os.system("cls")
-          
-    # for linux / Mac OS
-    else:
-        os.system("clear")
-  
 # Driver program
 if __name__ == '__main__': 
     load_animation()
