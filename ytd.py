@@ -1,5 +1,6 @@
 from pytube import YouTube
 from animation import load_animation
+import sys
 # https://www.youtube.com/watch?v=B5IbSOo4o5o
 # Testing with this video
 
@@ -26,7 +27,7 @@ _____________________________________________________________
 """)
 
 another = ""
-start = "y"
+start = ""
 dir_path = ""
 
 def directory(dir_name):
@@ -34,15 +35,13 @@ def directory(dir_name):
         dir_path = dir_name
         return dir_path
 
-while start == "y" or "n" or "auto":
+while True:
+    try:
+        if sys.argv[1] == "--auto" or "--a":
+                start = "auto"
+    except IndexError:
+        start = input("Do you want to download a video? (y/n/auto): ")
 
-    if another == "n":
-        print("See ya later")
-        break
-        
-    if another != "y":
-        start = input("Do you want to continue and download a YouTube video? (y/n/auto): ").lower()
-    
     if start == "n":
         print("See ya later")
         break
@@ -66,12 +65,11 @@ while start == "y" or "n" or "auto":
         else:
             print("Invalid input!")
             break
-        try:       
+        try:        
             link = input("Enter the url of the video: ")
             yt = YouTube(link)
         except:
-            print("Invalid url!")
-            break
+            print("Invalid url")    
         print("\n")
         print("Title: ", yt.title)
         print("Author: ", yt.author)
@@ -108,11 +106,13 @@ while start == "y" or "n" or "auto":
     
     while start == "auto":
         try:
+            if sys.argv[1].startswith("https://www.youtube.com/watch?v="):
+                yt = YouTube(sys.argv[1])
+            elif sys.argv[2].startswith("https://www.youtube.com/watch?v="):
+                yt = YouTube(sys.argv[2])                
+        except:
             link = input("Enter the url of the video: ")
             yt = YouTube(link)
-        except:
-            print("Invalid url!")
-            break
         print("\n")
         print("Title: ", yt.title)
         print("Author: ", yt.author)
