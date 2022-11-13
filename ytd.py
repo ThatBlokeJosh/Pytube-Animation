@@ -134,4 +134,4 @@ while True:
         else:
             print("Invalid input!")
             break
-# code slightly edited by me, otherwise all credit for this script to: https://githun.com/wiserat
+# code slightly edited by me, otherwise all credit for this script to: https://github.com/wiserat
